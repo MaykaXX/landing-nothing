@@ -1,0 +1,13 @@
+section#categories.c-categories(aria-labelledby='categories-title')
+  .o-container
+    .o-grid
+      h2#categories-title.c-section-title.c-categories__title
+        | Sound. Vision.
+        br
+        | It’s your pick.
+    ul.c-categories__list
+      each item in categories
+        li
+          +category(item)
+    .o-grid
+      +button('View all', '#categories').c-categories__button

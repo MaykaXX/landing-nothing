@@ -1,0 +1,22 @@
+@use '../2-tools' as a;
+
+.c-categories {
+  padding-block: var(--space-section);
+
+  &__title {
+    @include a.grid-column('span 2', 'span 5', 'span 7');
+    @include a.section-title-gap;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--row-gap);
+  }
+
+  &__button {
+    @include a.grid-column('span 2', 'span 6', 'span 4');
+
+    margin-top: var(--row-gap);
+  }
+}

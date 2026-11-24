@@ -1,0 +1,34 @@
+@use '../2-tools' as t;
+
+// Hero: десктоп FILL WIDTH (центр по вертикалі), 320/744 FILL HEIGHT: object-fit: cover.
+.c-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: var(--hero-height);
+  color: var(--color-white);
+
+  &__media {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  &__inner {
+    position: relative;
+    padding-bottom: var(--hero-padding);
+  }
+
+  &__title {
+    @include t.grid-column('span 2', '1 / 5', '1 / 8');
+
+    font-size: var(--fs-hero);
+    line-height: 1;
+  }
+}

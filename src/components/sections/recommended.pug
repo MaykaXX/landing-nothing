@@ -1,0 +1,7 @@
+section#recommended.c-recommended(aria-labelledby='recommended-title')
+  .o-container
+    h2#recommended-title.c-section-title.c-recommended__title Recommended
+    ul.c-recommended__list.o-grid
+      each product in products
+        li.c-recommended__item
+          +product-card(product)

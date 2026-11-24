@@ -1,0 +1,35 @@
+@use 'mq';
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@mixin focus-ring($color: var(--color-dark), $offset: 2px) {
+  outline: 2px solid $color;
+  outline-offset: $offset;
+}
+
+// Розміщення елемента по колонках сітки для 320 / 744 / 1260.
+@mixin grid-column($base, $md: $base, $lg: $md) {
+  grid-column: #{$base};
+
+  @include mq.mq(md) {
+    grid-column: #{$md};
+  }
+
+  @include mq.mq(lg) {
+    grid-column: #{$lg};
+  }
+}
+
+@mixin section-title-gap {
+  margin-bottom: var(--title-gap);
+}

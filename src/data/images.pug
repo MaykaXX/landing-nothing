@@ -1,0 +1,11 @@
+//- Усі зображення: один растровий файл на кадр, кадрування - object-fit (як у Figma, Image logic).
+-
+  const photo = (name, widths, width, height) => ({ name, widths, width, height })
+
+  const images = {
+    hero: photo('hero', [630, 1260], 1260, 720),
+    banner: photo('banner', [630, 1260], 1260, 460),
+  }
+
+  const productImage = (name) => photo(name, [216, 324], 324, 324)
+  const categoryImage = (name) => photo(name, [249, 498], 498, 324)

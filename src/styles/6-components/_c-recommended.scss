@@ -1,0 +1,18 @@
+@use '../2-tools' as a;
+
+.c-recommended {
+  padding-top: var(--space-lead);
+
+  &__title {
+    @include a.section-title-gap;
+  }
+
+  &__list {
+    row-gap: var(--row-gap);
+  }
+
+  // 320: 2 колонки; 744: 4 колонки по центру (зміщення на 1); 1260: по 4 з 12.
+  &__item {
+    @include a.grid-column('span 2', '2 / 6', 'span 4');
+  }
+}

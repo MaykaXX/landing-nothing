@@ -1,0 +1,9 @@
+@use '../1-settings' as s;
+@use '../2-tools' as t;
+
+.o-container {
+  width: 100%;
+  max-width: calc(#{t.rem(s.$content-width)} + var(--grid-margin) * 2);
+  margin-inline: auto;
+  padding-inline: var(--grid-margin);
+}

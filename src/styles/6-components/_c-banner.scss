@@ -1,0 +1,21 @@
+@use '../2-tools' as a;
+
+// Банер над секцією «Timeless»: повноширинний. 320/744: FILL HEIGHT, кадр зсунуто до пульта Halo.
+.c-banner {
+  height: var(--banner-height);
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 82% 50%;
+
+    @include a.mq(md) {
+      object-position: 92% 50%;
+    }
+
+    @include a.mq(lg) {
+      object-position: 50% 50%;
+    }
+  }
+}

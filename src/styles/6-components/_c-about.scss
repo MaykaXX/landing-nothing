@@ -1,0 +1,19 @@
+@use '../2-tools' as a;
+
+// «Timeless, for 50 years and counting»: секція з кольоровим фоном.
+.c-about {
+  padding-block: var(--space-about);
+  background-color: var(--color-surface-about);
+
+  &__inner {
+    row-gap: var(--about-gap);
+  }
+
+  &__title {
+    @include a.grid-column('span 2', '1 / 4', '1 / 7');
+  }
+
+  &__text {
+    @include a.grid-column('span 2', '4 / 7', '8 / 13');
+  }
+}

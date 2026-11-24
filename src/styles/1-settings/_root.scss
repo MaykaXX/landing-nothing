@@ -1,0 +1,42 @@
+@use 'sass:list';
+@use 'tokens' as s;
+@use '../2-tools' as a;
+
+// Токени як CSS custom properties. Значення (320 / 744 / 1260) перевизначаються через mq().
+:root {
+  @each $name, $value in s.$colors {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $name, $value in s.$fonts {
+    --font-#{$name}: #{$value};
+  }
+
+  @each $name, $sizes in s.$tokens-px {
+    --#{$name}: #{a.rem(list.nth($sizes, 1))};
+  }
+
+  @each $name, $values in s.$tokens-raw {
+    --#{$name}: #{list.nth($values, 1)};
+  }
+
+  @include a.mq(md) {
+    @each $name, $sizes in s.$tokens-px {
+      --#{$name}: #{a.rem(list.nth($sizes, 2))};
+    }
+
+    @each $name, $values in s.$tokens-raw {
+      --#{$name}: #{list.nth($values, 2)};
+    }
+  }
+
+  @include a.mq(lg) {
+    @each $name, $sizes in s.$tokens-px {
+      --#{$name}: #{a.rem(list.nth($sizes, 3))};
+    }
+
+    @each $name, $values in s.$tokens-raw {
+      --#{$name}: #{list.nth($values, 3)};
+    }
+  }
+}

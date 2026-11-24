@@ -1,0 +1,22 @@
+@use '../2-tools' as a;
+
+.c-contacts {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: a.rem(24);
+  }
+
+  &__label {
+    color: var(--color-label);
+    font-size: a.rem(14);
+  }
+
+  &__value {
+    margin-top: a.rem(8);
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+}

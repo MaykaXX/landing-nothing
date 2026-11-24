@@ -1,0 +1,19 @@
+// Модульна сітка макета: 2 / 6 / 12 колонок (токени --grid-*). Лише структура, без оформлення.
+.o-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+
+  // Режим налагодження: підсвічує колонки для звірки з макетом.
+  &--debug {
+    --col: calc((100% - (var(--grid-columns) - 1) * var(--grid-gutter)) / var(--grid-columns));
+
+    background-image: repeating-linear-gradient(
+      to right,
+      rgb(194 65 12 / 15%) 0,
+      rgb(194 65 12 / 15%) var(--col),
+      transparent var(--col),
+      transparent calc(var(--col) + var(--grid-gutter))
+    );
+  }
+}

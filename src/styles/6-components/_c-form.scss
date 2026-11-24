@@ -1,0 +1,11 @@
+@use '../2-tools' as a;
+
+.c-form {
+  display: flex;
+  flex-direction: column;
+  gap: a.rem(16);
+
+  &__submit {
+    margin-top: a.rem(16);
+  }
+}

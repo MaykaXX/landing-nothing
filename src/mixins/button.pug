@@ -1,0 +1,4 @@
+//- Кнопка (a, якщо є href, інакше button). Додаткові атрибути - через &attributes.
+mixin button(label, href)
+  - const tag = href ? 'a' : 'button';
+  #{tag}.c-button(href=href, type=href ? null : 'button')&attributes(attributes)= label

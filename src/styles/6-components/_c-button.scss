@@ -1,0 +1,32 @@
+@use '../2-tools' as t;
+
+// Кнопка: default (оранжева) / hover (темна, як «Send» на макеті) / pressed (:active).
+.c-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: t.rem(56);
+  padding: 0 t.rem(48);
+  border: 0;
+  border-radius: t.rem(4);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: t.rem(16);
+  font-weight: 600;
+  line-height: t.rem(27);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--color-dark);
+  }
+
+  &:active {
+    background-color: var(--color-accent-pressed);
+  }
+
+  &:focus-visible {
+    outline-color: var(--color-dark);
+  }
+}

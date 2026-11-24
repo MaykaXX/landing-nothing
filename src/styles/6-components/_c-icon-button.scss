@@ -1,0 +1,45 @@
+@use '../2-tools' as a;
+
+// Телефон, бургер, закрити: один вигляд. Номер показується при hover/focus (Header Hovers).
+.c-icon-button {
+  display: inline-flex;
+  align-items: center;
+  gap: a.rem(8);
+  color: var(--color-dark);
+  cursor: pointer;
+
+  &__icon {
+    display: block;
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
+
+  &__icon--hover {
+    display: none;
+  }
+
+  &__number {
+    display: none;
+    font-size: a.rem(12);
+    font-weight: 600;
+    line-height: a.rem(16);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &:hover &__number,
+  &:focus-visible &__number {
+    display: block;
+  }
+
+  &--swap:hover &__icon--default,
+  &--swap:focus-visible &__icon--default {
+    display: none;
+  }
+
+  &--swap:hover &__icon--hover,
+  &--swap:focus-visible &__icon--hover {
+    display: block;
+  }
+}

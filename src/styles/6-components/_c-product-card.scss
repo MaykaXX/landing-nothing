@@ -1,0 +1,37 @@
+@use '../2-tools' as t;
+
+.c-product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__media {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background-color: var(--color-surface);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-top: t.rem(24);
+    font-size: t.rem(18);
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    max-width: t.rem(288);
+    margin-top: t.rem(8);
+  }
+
+  &__price {
+    margin-top: auto;
+    padding-top: t.rem(12);
+    font-weight: 600;
+  }
+}

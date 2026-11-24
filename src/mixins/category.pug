@@ -1,0 +1,9 @@
+mixin category(item)
+  .c-category.o-grid
+    each image in item.images
+      .c-category__media
+        +picture(categoryImage(image.name), image.alt, {
+          cls: 'c-category__image',
+          sizes: '(min-width: 1260px) 498px, (min-width: 744px) 288px, 50vw',
+        })
+    h3.c-category__title= item.title

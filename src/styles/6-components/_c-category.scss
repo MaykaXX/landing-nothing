@@ -1,0 +1,35 @@
+@use '../2-tools' as t;
+
+// Галерея категорій: два однакові зображення в ряд (6 + 6 колонок), кадр cover.
+// Фон фото (#f9f9f9) збігається з фоном плитки.
+.c-category {
+  &__media {
+    grid-column: span 1;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background-color: var(--color-surface);
+
+    @include t.mq(md) {
+      grid-column: span 3;
+      aspect-ratio: 498 / 324;
+    }
+
+    @include t.mq(lg) {
+      grid-column: span 6;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-top: t.rem(16);
+    font-size: var(--fs-category);
+    line-height: 1.4;
+  }
+}

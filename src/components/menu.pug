@@ -1,0 +1,16 @@
+//- Меню без JS: відкривається через :target (#menu), закривається посиланням на #top.
+#menu.c-menu
+  .c-menu__bar.o-container
+    +logo
+    a.c-icon-button(href='#top', aria-label='Close menu')
+      span.c-icon-button__icon
+        +icon('close')
+  .c-menu__body.o-container
+    nav(aria-label='Main menu')
+      ul.c-menu__list
+        each item in menu
+          li
+            a.c-menu__link(href=item.href)= item.label
+    .c-menu__contact
+      a.c-menu__phone(href=`tel:${contacts.phoneHref}`)= contacts.phone
+      a.c-menu__call(href=`tel:${contacts.phoneHref}`) call to order

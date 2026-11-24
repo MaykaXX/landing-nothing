@@ -1,0 +1,22 @@
+@use '../2-tools' as a;
+
+.c-contact {
+  padding-top: var(--space-contact);
+  padding-bottom: var(--space-end);
+
+  &__title {
+    @include a.section-title-gap;
+  }
+
+  &__body {
+    row-gap: var(--contacts-gap);
+  }
+
+  &__form {
+    @include a.grid-column('span 2', 'span 6', 'span 6');
+  }
+
+  &__details {
+    @include a.grid-column('span 2', '1 / 5', '8 / 13');
+  }
+}

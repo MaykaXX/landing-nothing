@@ -1,0 +1,46 @@
+section#contact.c-contact(aria-labelledby='contact-title')
+  .o-container
+    h2#contact-title.c-section-title.c-contact__title Contact us
+    .c-contact__body.o-grid
+      form.c-form.c-contact__form(action='#contact', method='get')
+        label.u-visually-hidden(for='contact-name') Name
+        input#contact-name.c-field(
+          type='text',
+          name='name',
+          placeholder='Name',
+          autocomplete='name',
+          required
+        )
+        label.u-visually-hidden(for='contact-email') Email
+        input#contact-email.c-field(
+          type='email',
+          name='email',
+          placeholder='Email',
+          autocomplete='email',
+          required
+        )
+        label.u-visually-hidden(for='contact-message') Message
+        textarea#contact-message.c-field.c-field--textarea(
+          name='message',
+          placeholder='Message',
+          rows='6',
+          required
+        )
+        +button('Send').c-form__submit(type='submit')
+      address.c-contacts.c-contact__details
+        dl.c-contacts__list
+          div
+            dt.c-contacts__label Phone
+            dd.c-contacts__value
+              a.c-contacts__link(href=`tel:${contacts.phoneHref}`)= contacts.phone
+          div
+            dt.c-contacts__label Email
+            dd.c-contacts__value
+              a.c-contacts__link(href=`mailto:${contacts.email}`)= contacts.email
+          div
+            dt.c-contacts__label Address
+            dd.c-contacts__value
+              each line, i in contacts.address
+                | #{ line }
+                if i < contacts.address.length - 1
+                  br

@@ -1,0 +1,22 @@
+@use '../2-tools' as a;
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  font-family: var(--font-base);
+  font-size: a.rem(16);
+  line-height: 1.4;
+}
+
+address {
+  font-style: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  @include a.focus-ring;
+}
