@@ -1,0 +1,23 @@
+@use '../utils' as a;
+
+.clients {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: a.rem(24);
+    margin-bottom: a.rem(48);
+
+    @include a.mq(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include a.mq(lg) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+}

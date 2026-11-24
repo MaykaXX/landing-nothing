@@ -1,0 +1,28 @@
+@use 'sass:list';
+@use '../utils' as a;
+
+:root {
+  @each $name, $value in a.$colors {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $name, $value in a.$fonts {
+    --font-#{$name}: #{$value};
+  }
+
+  @each $name, $sizes in a.$responsive-tokens {
+    --#{$name}: #{a.rem(list.nth($sizes, 1))};
+  }
+
+  @include a.mq(md) {
+    @each $name, $sizes in a.$responsive-tokens {
+      --#{$name}: #{a.rem(list.nth($sizes, 2))};
+    }
+  }
+
+  @include a.mq(lg) {
+    @each $name, $sizes in a.$responsive-tokens {
+      --#{$name}: #{a.rem(list.nth($sizes, 3))};
+    }
+  }
+}

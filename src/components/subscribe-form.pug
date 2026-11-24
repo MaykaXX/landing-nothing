@@ -1,0 +1,21 @@
+//- Стани: default / focus / error (:user-invalid) / success (:target після відправки).
+form#subscribed.subscribe(action='#subscribed', method='get')
+  .subscribe__fields
+    h2.subscribe__title Stay in the loop
+    .subscribe__row
+      .subscribe__field
+        label.visually-hidden(for='subscribe-email') Email address
+        input#subscribe-email.subscribe__input(
+          type='email',
+          name='email',
+          placeholder='Your email address',
+          autocomplete='email',
+          required,
+          aria-describedby='subscribe-email-error'
+        )
+        p#subscribe-email-error.subscribe__error Please enter a valid email address.
+      +btn('Subscribe')(type='submit')
+    label.subscribe__consent
+      input.subscribe__check(type='checkbox', name='consent', required)
+      span I agree to receive emails from Keepsake.
+  p.subscribe__success(role='status') Thank you! You are subscribed.

@@ -1,0 +1,57 @@
+@use '../utils' as a;
+
+.works {
+  &__radio {
+    @include a.visually-hidden;
+  }
+
+  &__chips {
+    display: flex;
+    gap: a.rem(8);
+    margin-right: calc(var(--gutter) * -1);
+    margin-bottom: a.rem(24);
+    padding-right: var(--gutter);
+    padding-bottom: a.rem(4);
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    @include a.mq(md) {
+      flex-wrap: wrap;
+      margin-right: 0;
+      padding-right: 0;
+      overflow-x: visible;
+    }
+  }
+
+  &__more {
+    display: grid;
+    margin-top: a.rem(32);
+
+    @include a.mq(md) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@each $category in a.$categories {
+  .works__radio[value='#{$category}']:checked ~ .works__chips .chip[for='filter-#{$category}'] {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+    color: var(--color-white);
+  }
+
+  .works__radio[value='#{$category}']:focus-visible
+    ~ .works__chips
+    .chip[for='filter-#{$category}'] {
+    @include a.focus-ring;
+  }
+
+  @if $category != 'all' {
+    .works__radio[value='#{$category}']:checked
+      ~ .works-grid
+      .works-grid__item:not([data-category='#{$category}']) {
+      display: none;
+    }
+  }
+}

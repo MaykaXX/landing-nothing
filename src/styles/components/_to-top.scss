@@ -1,0 +1,8 @@
+@use '../utils' as a;
+
+.to-top {
+  position: fixed;
+  z-index: 90;
+  right: a.rem(20);
+  bottom: a.rem(20);
+}

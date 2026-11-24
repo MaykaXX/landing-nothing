@@ -1,0 +1,74 @@
+@use '../utils' as a;
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg-light);
+
+  &__link {
+    display: block;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 0.72;
+    object-fit: cover;
+
+    @include a.mq(md) {
+      aspect-ratio: 1 / 0.79;
+    }
+  }
+
+  &__overlay {
+    @include a.flex-center(column);
+
+    position: absolute;
+    inset: 0;
+    gap: a.rem(12);
+    padding: a.rem(16);
+    background-color: var(--color-overlay);
+    color: var(--color-white);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  &:hover &__overlay,
+  &:focus-within &__overlay {
+    opacity: 1;
+  }
+
+  &__plus {
+    @include a.flex-center;
+
+    width: a.rem(48);
+    height: a.rem(48);
+    border-radius: 50%;
+    background-color: var(--color-teal);
+  }
+
+  &__icon {
+    width: a.rem(22);
+    height: a.rem(22);
+  }
+
+  &__title {
+    font-size: a.rem(18);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__line {
+    width: a.rem(24);
+    height: 2px;
+    background-color: var(--color-accent);
+  }
+
+  &__category {
+    color: var(--color-teal);
+    font-size: a.rem(12);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}

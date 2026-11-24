@@ -1,0 +1,22 @@
+section#works.section.works(aria-labelledby='works-title')
+  .container
+    +section-title('Our awesome works')#works-title
+    //- Радіокнопки мають бути сусідами чипсів і сітки: фільтр працює на CSS :checked ~
+    .works__filter
+      each category, i in categories
+        input.works__radio(
+          type='radio',
+          name='filter',
+          id=`filter-${category.value}`,
+          value=category.value,
+          checked=i === 0
+        )
+      .works__chips
+        each category in categories
+          label.chip(for=`filter-${category.value}`)= category.label
+      ul.works-grid
+        each work, i in works
+          li.works-grid__item(data-category=work.category)
+            +work-card(work)
+    .works__more
+      +btn('Load more works', '#works', 'secondary')

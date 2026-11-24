@@ -1,0 +1,31 @@
+@use '../utils' as a;
+
+.burger {
+  @include a.button-reset;
+  @include a.flex-center;
+
+  width: a.rem(40);
+  height: a.rem(40);
+  color: var(--color-text-dark);
+
+  @include a.mq(md) {
+    display: none;
+  }
+
+  &__icon {
+    width: a.rem(24);
+    height: a.rem(24);
+
+    &--close {
+      display: none;
+    }
+  }
+}
+
+.header:has(.mobile-menu:popover-open) .burger__icon--open {
+  display: none;
+}
+
+.header:has(.mobile-menu:popover-open) .burger__icon--close {
+  display: block;
+}

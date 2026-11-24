@@ -1,0 +1,14 @@
+//- Карточка роботи портфоліо: картинка + оверлей, що з'являється на hover і focus.
+mixin work-card(work)
+  article.work-card
+    a.work-card__link(href='#')
+      +picture(work.image, work.alt, {
+        sizes: '(min-width: 1280px) 357px, (min-width: 768px) 50vw, 100vw',
+        cls: 'work-card__img',
+      })
+      .work-card__overlay
+        span.work-card__plus
+          +icon('plus', 'work-card__icon')
+        h3.work-card__title= work.title
+        span.work-card__line(aria-hidden='true')
+        p.work-card__category= work.category

@@ -1,0 +1,26 @@
+@use '../utils' as a;
+
+.socials {
+  display: flex;
+  gap: a.rem(12);
+
+  &__link {
+    @include a.flex-center;
+
+    width: a.rem(36);
+    height: a.rem(36);
+    border: 1px solid currentcolor;
+    border-radius: 50%;
+    color: var(--color-muted);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__icon {
+    width: a.rem(16);
+    height: a.rem(16);
+  }
+}

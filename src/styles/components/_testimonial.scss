@@ -1,0 +1,85 @@
+@use '../utils' as a;
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: a.rem(40) a.rem(20);
+  background-color: var(--color-bg-light);
+  text-align: center;
+
+  @include a.mq(md) {
+    padding: a.rem(56) a.rem(40);
+  }
+
+  &__figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__mark {
+    width: a.rem(40);
+    height: a.rem(40);
+    margin-bottom: a.rem(16);
+    color: var(--color-accent);
+  }
+
+  &__text {
+    max-width: a.rem(760);
+    color: var(--color-text-dark);
+    font-size: var(--fs-quote);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: a.rem(12);
+    margin-top: a.rem(24);
+    text-align: left;
+  }
+
+  &__avatar {
+    @include a.flex-center;
+
+    width: a.rem(48);
+    height: a.rem(48);
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: a.rem(14);
+    letter-spacing: 1px;
+  }
+
+  &__name {
+    display: block;
+    color: var(--color-text-dark);
+    font-weight: 700;
+  }
+
+  &__role {
+    display: block;
+    color: var(--color-muted);
+    font-size: a.rem(12);
+  }
+
+  &__dots {
+    display: flex;
+    gap: a.rem(8);
+    margin-top: a.rem(24);
+  }
+
+  &__dot {
+    width: a.rem(8);
+    height: a.rem(8);
+    border-radius: 50%;
+    background-color: var(--color-muted);
+
+    &--active {
+      background-color: var(--color-accent);
+    }
+  }
+}

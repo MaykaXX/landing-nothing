@@ -1,0 +1,52 @@
+@use '../utils' as a;
+
+.post {
+  display: flex;
+  gap: a.rem(20);
+
+  &__img {
+    flex-shrink: 0;
+    width: var(--thumb);
+    height: var(--thumb);
+    object-fit: cover;
+  }
+
+  &__meta {
+    display: flex;
+    gap: a.rem(12);
+    color: var(--color-muted);
+    font-size: a.rem(12);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__category {
+    color: var(--color-teal);
+  }
+
+  &__title {
+    margin-top: a.rem(8);
+    color: var(--color-text-dark);
+    font-size: a.rem(16);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-top: a.rem(8);
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: a.rem(12);
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-size: var(--fs-ui);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: var(--color-accent-hover);
+    }
+  }
+}

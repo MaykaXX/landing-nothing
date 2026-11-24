@@ -1,0 +1,41 @@
+@use '../utils' as a;
+
+.services {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: a.rem(32) a.rem(16);
+
+    @include a.mq(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__icon {
+    @include a.flex-center;
+
+    width: var(--services-icon);
+    height: var(--services-icon);
+    margin: 0 auto a.rem(20);
+    border-radius: 50%;
+    background-color: var(--color-bg-light);
+    color: var(--color-accent);
+  }
+
+  &__svg {
+    width: a.rem(32);
+    height: a.rem(32);
+  }
+
+  &__title {
+    margin-bottom: a.rem(8);
+    color: var(--color-text-dark);
+    font-size: a.rem(16);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}

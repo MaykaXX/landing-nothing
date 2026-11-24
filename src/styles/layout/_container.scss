@@ -1,0 +1,8 @@
+@use '../utils' as a;
+
+.container {
+  width: 100%;
+  max-width: calc(#{a.rem(a.$container-width)} + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}

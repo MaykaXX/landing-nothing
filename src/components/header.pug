@@ -1,0 +1,26 @@
+header.header
+  .container.header__inner
+    +logo
+    .header__actions
+      nav.nav(aria-label='Main')
+        ul.nav__list
+          each item in nav
+            li.nav__item
+              a.nav__link(
+                href=item.href,
+                class={ 'nav__link--active': item.active },
+                aria-current=item.active ? 'page' : null
+              )= item.label
+      .header__fav
+        button.icon-btn(type='button', aria-label='Favourites')
+          +icon('heart', 'icon-btn__icon')
+      button.burger(
+        type='button',
+        popovertarget='mobile-menu',
+        aria-controls='mobile-menu',
+        ,
+        aria-label='Menu'
+      )
+        +icon('burger', 'burger__icon burger__icon--open')
+        +icon('close', 'burger__icon burger__icon--close')
+  include mobile-menu.pug

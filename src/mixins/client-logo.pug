@@ -1,0 +1,11 @@
+//- Умовний SVG-логотип клієнта: геометрична фігура за назвою (case) + назва.
+mixin client-logo(client)
+  svg.client-logo(viewBox='0 0 140 40', role='img', aria-label=client.name)
+    case client.shape
+      when 'circle'
+        circle.client-logo__shape(cx='20', cy='20', r='12')
+      when 'square'
+        rect.client-logo__shape(x='8', y='8', width='24', height='24')
+      default
+        path.client-logo__shape(d='M20 6 34 20 20 34 6 20z')
+    text.client-logo__name(x='44', y='26', font-size='16')= client.name

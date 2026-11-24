@@ -1,0 +1,21 @@
+//- Адаптивне зображення: AVIF -> WebP -> JPEG, srcset/sizes, width/height, lazy.
+//- Файли: src/assets/images/<name>-<width>.(avif|webp|jpg), їх створює `npm run images`.
+mixin picture(name, alt, opts = {})
+  - const { widths = [400, 800], width = 800, height = 632, sizes = '100vw', lazy = true, cls = '' } = opts;
+  - const dir = '/src/assets/images';
+  - const srcset = (ext) => widths.map((w) => `${dir}/${name}-${w}.${ext} ${w}w`).join(', ');
+  picture
+    source(type='image/avif', srcset=srcset('avif'), sizes=sizes)
+    source(type='image/webp', srcset=srcset('webp'), sizes=sizes)
+    img(
+      class=cls || null,
+      src=`${dir}/${name}-${widths[widths.length - 1]}.jpg`,
+      srcset=srcset('jpg'),
+      sizes=sizes,
+      alt=alt,
+      width=width,
+      height=height,
+      loading=lazy ? 'lazy' : null,
+      fetchpriority=lazy ? null : 'high',
+      decoding='async'
+    )

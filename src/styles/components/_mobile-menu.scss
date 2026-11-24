@@ -1,0 +1,60 @@
+@use '../utils' as a;
+
+.mobile-menu {
+  position: fixed;
+  inset: var(--header-height) 0 auto;
+  width: 100%;
+  max-height: calc(100dvh - var(--header-height));
+  margin: 0;
+  padding: a.rem(8) var(--gutter) a.rem(32);
+  overflow-y: auto;
+  border: 0;
+  background-color: var(--color-white);
+  color: var(--color-text);
+
+  &:popover-open {
+    display: flex;
+    flex-direction: column;
+    gap: a.rem(24);
+  }
+
+  @include a.mq(md) {
+    &:popover-open {
+      display: none;
+    }
+  }
+
+  &__item {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  &__link {
+    display: block;
+    padding: a.rem(14) 0;
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-size: var(--fs-ui);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &:hover,
+    &--active {
+      color: var(--color-accent);
+    }
+  }
+
+  &__actions {
+    display: grid;
+    gap: a.rem(12);
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: a.rem(4);
+  }
+
+  &__contact:hover {
+    color: var(--color-accent);
+  }
+}

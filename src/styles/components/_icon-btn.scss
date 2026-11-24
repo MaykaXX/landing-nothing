@@ -1,0 +1,27 @@
+@use '../utils' as a;
+
+.icon-btn {
+  @include a.button-reset;
+  @include a.flex-center;
+
+  width: a.rem(36);
+  height: a.rem(36);
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  &--lg {
+    width: a.rem(44);
+    height: a.rem(44);
+  }
+
+  &__icon {
+    width: a.rem(18);
+    height: a.rem(18);
+  }
+}

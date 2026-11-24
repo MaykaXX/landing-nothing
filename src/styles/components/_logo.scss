@@ -1,0 +1,30 @@
+@use '../utils' as a;
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: a.rem(10);
+  color: var(--color-text-dark);
+
+  &__mark {
+    flex-shrink: 0;
+    width: var(--logo-mark);
+    height: var(--logo-mark);
+  }
+
+  &__circle {
+    fill: var(--color-text-dark);
+  }
+
+  &__letter {
+    fill: var(--color-white);
+    font-family: var(--font-script);
+  }
+
+  &__text {
+    font-family: var(--font-script);
+    font-size: var(--fs-logo);
+    font-weight: 700;
+    line-height: 1;
+  }
+}

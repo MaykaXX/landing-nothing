@@ -1,0 +1,28 @@
+@use '../utils' as a;
+
+.nav {
+  display: none;
+
+  @include a.mq(md) {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    gap: var(--nav-gap);
+  }
+
+  &__link {
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-size: var(--fs-ui);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+
+    &:hover,
+    &--active {
+      color: var(--color-accent);
+    }
+  }
+}

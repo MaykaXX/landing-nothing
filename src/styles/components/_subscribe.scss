@@ -1,0 +1,87 @@
+@use '../utils' as a;
+
+.subscribe {
+  &__title {
+    margin-bottom: a.rem(16);
+    color: var(--color-white);
+    font-size: a.rem(14);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: a.rem(12);
+
+    @include a.mq(md) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  &__field {
+    flex: 1;
+  }
+
+  &__error {
+    display: none;
+    margin-top: a.rem(6);
+    color: var(--color-accent);
+    font-size: a.rem(12);
+  }
+
+  &__input {
+    width: 100%;
+    min-height: a.rem(44);
+    padding: 0 a.rem(14);
+    border: 1px solid var(--color-text);
+    background-color: transparent;
+    color: var(--color-white);
+
+    &::placeholder {
+      color: var(--color-muted);
+      opacity: 1;
+    }
+
+    &:focus {
+      border-color: var(--color-teal);
+    }
+
+    &:user-invalid {
+      border-color: var(--color-accent);
+    }
+
+    &:user-invalid ~ .subscribe__error {
+      display: block;
+    }
+  }
+
+  &__consent {
+    display: flex;
+    align-items: flex-start;
+    gap: a.rem(10);
+    margin-top: a.rem(14);
+    font-size: a.rem(12);
+  }
+
+  &__check {
+    flex-shrink: 0;
+    margin: a.rem(2) 0 0;
+    accent-color: var(--color-accent);
+  }
+
+  &__success {
+    display: none;
+    color: var(--color-teal);
+    font-size: a.rem(14);
+  }
+
+  &:target &__fields {
+    display: none;
+  }
+
+  &:target &__success {
+    display: block;
+  }
+}

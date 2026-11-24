@@ -1,0 +1,35 @@
+@use '../utils' as a;
+
+.works-grid {
+  display: grid;
+  gap: var(--works-gap);
+
+  @include a.mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include a.mq(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // Кількість карток: mobile 5, tablet 8, desktop 9
+  &__item:nth-child(n + 6) {
+    display: none;
+  }
+
+  @include a.mq(md) {
+    &__item:nth-child(n + 6) {
+      display: block;
+    }
+
+    &__item:nth-child(n + 9) {
+      display: none;
+    }
+  }
+
+  @include a.mq(lg) {
+    &__item:nth-child(n + 9) {
+      display: block;
+    }
+  }
+}

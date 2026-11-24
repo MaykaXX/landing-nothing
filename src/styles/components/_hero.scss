@@ -1,0 +1,31 @@
+@use '../utils' as a;
+
+.hero {
+  padding-block: var(--section-gap);
+  background-color: var(--color-bg-light);
+
+  &__title {
+    max-width: a.rem(640);
+    color: var(--color-text-dark);
+    font-size: var(--fs-hero);
+    font-weight: 300;
+    line-height: 1.25;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    max-width: a.rem(520);
+    margin-top: a.rem(20);
+  }
+
+  &__actions {
+    display: grid;
+    gap: a.rem(12);
+    margin-top: a.rem(32);
+
+    @include a.mq(md) {
+      display: flex;
+    }
+  }
+}

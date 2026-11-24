@@ -1,0 +1,18 @@
+- const year = new Date().getFullYear();
+
+footer.footer
+  .container
+    .footer__top
+      nav.footer__nav(aria-label='Footer')
+        each column in footerColumns
+          .footer__col
+            h2.footer__title= column.title
+            ul.footer__links
+              each link in column.links
+                li
+                  a.footer__link(href=link.href)= link.label
+      .footer__subscribe
+        include subscribe-form.pug
+    .footer__bottom
+      p.footer__copy &copy; #{ year } Keepsake. All rights reserved.
+      +socials(socials)

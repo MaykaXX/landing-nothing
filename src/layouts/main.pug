@@ -1,0 +1,41 @@
+//- Дані та міксини підключаються тут, тому доступні в усіх блоках сторінок.
+include ../data/nav.pug
+include ../data/categories.pug
+include ../data/works.pug
+include ../data/services.pug
+include ../data/stats.pug
+include ../data/clients.pug
+include ../data/posts.pug
+include ../data/footer.pug
+include ../mixins/icon.pug
+include ../mixins/btn.pug
+include ../mixins/picture.pug
+include ../mixins/work-card.pug
+include ../mixins/section-title.pug
+include ../mixins/logo.pug
+include ../mixins/socials.pug
+include ../mixins/client-logo.pug
+
+doctype html
+html(lang='en')
+  head
+    include ../includes/meta-base.pug
+    block meta
+      meta(name='theme-color', content='#f95858')
+      link(
+        rel='icon',
+        href='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 40 40\'><circle cx=\'20\' cy=\'20\' r=\'20\' fill=\'%233a3a3c\'/><text x=\'20\' y=\'28\' text-anchor=\'middle\' font-size=\'26\' font-weight=\'700\' fill=\'white\' font-family=\'serif\'>K</text></svg>'
+      )
+    title
+      block title
+        | Keepsake
+    block styles
+      link(rel='stylesheet', href='/src/styles/main.scss')
+  body#top
+    include ../components/header.pug
+    main
+      block content
+    include ../components/footer.pug
+    a.icon-btn.icon-btn--lg.to-top(href='#top', aria-label='Back to top')
+      +icon('arrow-up', 'icon-btn__icon')
+    block scripts

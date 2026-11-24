@@ -1,0 +1,5 @@
+@use '../utils' as a;
+
+.visually-hidden {
+  @include a.visually-hidden;
+}

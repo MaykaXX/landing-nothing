@@ -1,0 +1,20 @@
+section#clients.section.clients(aria-labelledby='clients-title')
+  .container
+    +section-title('Clients & kind words')#clients-title
+    ul.clients__list
+      each client in clients
+        li.clients__item
+          +client-logo(client)
+    .testimonial
+      figure.testimonial__figure
+        +icon('quote', 'testimonial__mark')
+        blockquote.testimonial__text
+          p= testimonial.quote
+        figcaption.testimonial__author
+          span.testimonial__avatar(aria-hidden='true')= testimonial.initials
+          span.testimonial__info
+            span.testimonial__name= testimonial.name
+            span.testimonial__role= testimonial.role
+      ul.testimonial__dots(aria-hidden='true')
+        each _, i in Array.from({ length: testimonial.slides })
+          li.testimonial__dot(class={ 'testimonial__dot--active': i === 0 })

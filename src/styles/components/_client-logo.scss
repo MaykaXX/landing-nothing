@@ -1,0 +1,17 @@
+@use '../utils' as a;
+
+.client-logo {
+  width: 100%;
+  max-width: a.rem(140);
+  height: auto;
+  color: var(--color-muted);
+
+  &__shape {
+    fill: currentcolor;
+  }
+
+  &__name {
+    fill: currentcolor;
+    font-family: var(--font-heading);
+  }
+}

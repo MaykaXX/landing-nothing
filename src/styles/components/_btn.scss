@@ -1,0 +1,45 @@
+@use '../utils' as a;
+
+.btn {
+  @include a.button-reset;
+  @include a.flex-center;
+
+  display: inline-flex;
+  gap: a.rem(8);
+  min-height: a.rem(44);
+  padding: 0 a.rem(28);
+  border: 1px solid transparent;
+  font-family: var(--font-heading);
+  font-size: var(--fs-ui);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+
+  &__icon {
+    width: a.rem(18);
+    height: a.rem(18);
+  }
+
+  &--primary {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+    }
+  }
+
+  &--secondary {
+    border-color: var(--color-border);
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+  }
+}

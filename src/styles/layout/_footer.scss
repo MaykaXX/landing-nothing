@@ -1,0 +1,79 @@
+@use '../utils' as a;
+
+.footer {
+  padding-block: a.rem(56) a.rem(32);
+  background-color: var(--color-footer);
+  color: var(--color-muted);
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: a.rem(40);
+    padding-bottom: a.rem(40);
+
+    @include a.mq(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: a.rem(48);
+
+    @include a.mq(md) {
+      gap: a.rem(80);
+    }
+  }
+
+  &__title {
+    margin-bottom: a.rem(16);
+    color: var(--color-white);
+    font-size: a.rem(14);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: a.rem(10);
+  }
+
+  &__link {
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+
+  &__subscribe {
+    order: -1;
+
+    @include a.mq(md) {
+      order: 0;
+      flex: 0 1 a.rem(380);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: a.rem(20);
+    padding-top: a.rem(28);
+    border-top: 1px solid var(--color-text);
+    text-align: center;
+
+    @include a.mq(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  &__copy {
+    font-size: a.rem(12);
+  }
+}

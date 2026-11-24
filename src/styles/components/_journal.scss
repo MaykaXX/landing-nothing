@@ -1,0 +1,13 @@
+@use '../utils' as a;
+
+.journal {
+  &__list {
+    display: grid;
+    gap: a.rem(32);
+
+    @include a.mq(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: a.rem(40);
+    }
+  }
+}

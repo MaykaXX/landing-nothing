@@ -1,0 +1,94 @@
+$container-width: 1100;
+$colors: (
+  'accent': #f95858,
+  'accent-hover': #e44646,
+  'teal': #2cd5c4,
+  'text-dark': #3a3a3c,
+  'text': #666a6e,
+  'muted': #9aa0a6,
+  'bg-light': #f0f3f4,
+  'border': #e1e5e8,
+  'footer': #2a2a2d,
+  'overlay': rgb(30 32 36 / 82%),
+  'white': #fff,
+);
+$fonts: (
+  'heading': "'Oswald', sans-serif",
+  'body': "'Open Sans', sans-serif",
+  'script': "'Dancing Script', cursive",
+);
+$categories: ('all', 'branding', 'identity', 'print', 'web', 'motion');
+
+// Значення в px: (mobile, tablet, desktop). У :root стають CSS custom properties.
+$responsive-tokens: (
+  'gutter': (
+    20,
+    40,
+    90,
+  ),
+  'section-gap': (
+    56,
+    72,
+    90,
+  ),
+  'header-height': (
+    64,
+    72,
+    80,
+  ),
+  'nav-gap': (
+    0,
+    24,
+    36,
+  ),
+  'works-gap': (
+    12,
+    12,
+    14,
+  ),
+  'services-icon': (
+    72,
+    96,
+    96,
+  ),
+  'thumb': (
+    96,
+    150,
+    150,
+  ),
+  'logo-mark': (
+    34,
+    40,
+    40,
+  ),
+  'fs-logo': (
+    22,
+    26,
+    26,
+  ),
+  'fs-hero': (
+    26,
+    32,
+    40,
+  ),
+  'fs-cta': (
+    22,
+    24,
+    28,
+  ),
+  'fs-ui': (
+    12,
+    13,
+    13,
+  ),
+  'fs-quote': (
+    16,
+    19,
+    22,
+  ),
+  'fs-stat': (
+    38,
+    40,
+    48,
+  ),
+);
