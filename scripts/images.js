@@ -7,11 +7,12 @@ import sharp from 'sharp';
 const SRC_DIR = 'images-src';
 const OUT_DIR = 'src/assets/images';
 
-// Ширини за ім'ям файлу (у px, з урахуванням 2x). Вихідник має бути не вужчим за найбільшу ширину.
+// Ширини за ім'ям файлу (у px). Вихідники з макета експортовано в 1x, тому більших ширин немає:
+// для 2x експортуйте з Figma @2x, замініть файли в images-src/ і додайте ширини сюди.
 const WIDTHS = [
-  [/^(hero|banner)$/, [720, 1440, 2880]],
-  [/^product-/, [324, 648, 1200]],
-  [/^category-/, [340, 672, 1344]],
+  [/^(hero|banner)$/, [630, 1260]],
+  [/^product-/, [216, 324]],
+  [/^category-/, [249, 498]],
 ];
 
 await mkdir(OUT_DIR, { recursive: true });
@@ -28,7 +29,7 @@ for (const file of files) {
   }
 
   for (const width of widths) {
-    const image = sharp(path.join(SRC_DIR, file)).resize({ width });
+    const image = sharp(path.join(SRC_DIR, file)).resize({ width, withoutEnlargement: true });
     const target = `${OUT_DIR}/${name}-${width}`;
 
     await image.clone().avif({ quality: 50 }).toFile(`${target}.avif`);
