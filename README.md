@@ -3,7 +3,7 @@
 Лабораторна робота №10, **варіант 2**, методологія **BEM + ITCSS**.
 
 - Макет: [Figma, сторінка `v2 B&O`](https://www.figma.com/design/SKwOm0iY8234gJZwOBezoS/BOSE-New-Version--Copy-?node-id=6817-211)
-- Демо: https://USER.github.io/landing-nothing/ (замінити `USER`)
+- Демо: [https://USER.github.io/landing-nothing/](https://maykaxx.github.io/landing-nothing/) 
 
 ## Команди
 
@@ -90,4 +90,4 @@ Hero і банер це один растр на кадр: `object-fit: cover` +
 
 ## Скриншоти
 
-PerfectPixel (320 / 744 / 1260), W3C Validator, PageSpeed Insights (Mobile, Desktop): додати після перевірки опублікованої сторінки.
+PerfectPixel (320 / 744 / 1260), W3C Validator, PageSpeed Insights (Mobile, Desktop)
