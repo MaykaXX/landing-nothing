@@ -1,26 +1,16 @@
-header.header
-  .container.header__inner
+header.c-header
+  .c-header__inner.o-container
     +logo
-    .header__actions
-      nav.nav(aria-label='Main')
-        ul.nav__list
-          each item in nav
-            li.nav__item
-              a.nav__link(
-                href=item.href,
-                class={ 'nav__link--active': item.active },
-                aria-current=item.active ? 'page' : null
-              )= item.label
-      .header__fav
-        button.icon-btn(type='button', aria-label='Favourites')
-          +icon('heart', 'icon-btn__icon')
-      button.burger(
-        type='button',
-        popovertarget='mobile-menu',
-        aria-controls='mobile-menu',
-        ,
-        aria-label='Menu'
+    .c-header__controls
+      a.c-icon-button(
+        href=`tel:${contacts.phoneHref}`,
+        aria-label=`Call us: ${contacts.phoneHeader}`
       )
-        +icon('burger', 'burger__icon burger__icon--open')
-        +icon('close', 'burger__icon burger__icon--close')
-  include mobile-menu.pug
+        span.c-icon-button__number= contacts.phoneHeader
+        span.c-icon-button__icon
+          +icon('phone')
+      a.c-icon-button.c-icon-button--swap(href='#menu', aria-label='Open menu')
+        span.c-icon-button__icon.c-icon-button__icon--default
+          +icon('burger')
+        span.c-icon-button__icon.c-icon-button__icon--hover
+          +icon('burger-hover')

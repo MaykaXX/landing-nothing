@@ -3,31 +3,24 @@ extends ../layouts/main.pug
 block append meta
   meta(
     name='description',
-    content='Keepsake is a design agency creating brands, websites and print that people keep.'
+    content='Nothing: phones, earbuds and accessories designed to bring joy back to the everyday. Explore recommended products and categories, or contact us.'
   )
-  meta(property='og:title', content='Keepsake - design agency')
-  meta(
-    property='og:description',
-    content='Branding, web design, print and motion for brands that want to be remembered.'
-  )
-  meta(property='og:type', content='website')
 
 block title
-  | Keepsake - design agency
+  | Nothing - Bring joy back to the everyday
 
 block prepend styles
   link(rel='preconnect', href='https://fonts.googleapis.com')
   link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
   link(
     rel='stylesheet',
-    href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@300;400;700&family=Oswald:wght@300;400;700&display=swap'
+    href='https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Space+Grotesk:wght@400;700&family=Space+Mono&display=swap'
   )
 
 block content
   include ../components/sections/hero.pug
-  include ../components/sections/works.pug
-  include ../components/sections/cta.pug
-  include ../components/sections/services.pug
-  include ../components/sections/stats.pug
-  include ../components/sections/clients.pug
-  include ../components/sections/journal.pug
+  include ../components/sections/recommended.pug
+  include ../components/sections/categories.pug
+  include ../components/sections/banner.pug
+  include ../components/sections/about.pug
+  include ../components/sections/contact.pug

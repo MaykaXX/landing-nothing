@@ -1,3 +1,7 @@
-@use 'base';
-@use 'layout';
-@use 'components';
+// ITCSS: від загального до конкретного. Специфічність і «вага» правил зростають зверху вниз.
+@use '1-settings/root';
+@use '3-generic' as generic;
+@use '4-elements' as elements;
+@use '5-objects' as objects;
+@use '6-components' as components;
+@use '7-utilities' as utilities;

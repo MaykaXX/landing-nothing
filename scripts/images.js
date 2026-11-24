@@ -7,11 +7,12 @@ import sharp from 'sharp';
 const SRC_DIR = 'images-src';
 const OUT_DIR = 'src/assets/images';
 
-// Ширини залежать від префікса імені файлу. Вихідник має бути не вужчим за найбільшу ширину.
-const WIDTHS = {
-  work: [400, 800],
-  journal: [150, 300],
-};
+// Ширини за ім'ям файлу (у px, з урахуванням 2x). Вихідник має бути не вужчим за найбільшу ширину.
+const WIDTHS = [
+  [/^(hero|banner)$/, [720, 1440, 2880]],
+  [/^product-/, [324, 648, 1200]],
+  [/^category-/, [340, 672, 1344]],
+];
 
 await mkdir(OUT_DIR, { recursive: true });
 
@@ -19,7 +20,12 @@ const files = (await readdir(SRC_DIR)).filter((file) => /\.(jpe?g|png)$/i.test(f
 
 for (const file of files) {
   const name = path.parse(file).name;
-  const widths = WIDTHS[name.split('-')[0]] ?? [400, 800];
+  const widths = WIDTHS.find(([pattern]) => pattern.test(name))?.[1];
+
+  if (!widths) {
+    console.warn(`skip: ${file} (немає правила ширин)`);
+    continue;
+  }
 
   for (const width of widths) {
     const image = sharp(path.join(SRC_DIR, file)).resize({ width });

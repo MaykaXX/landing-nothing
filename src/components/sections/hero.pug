@@ -1,7 +1,10 @@
-section.hero(aria-labelledby='hero-title')
-  .container
-    h1#hero-title.hero__title We design brands people keep
-    p.hero__text Keepsake is an independent design agency. We shape identities, websites and print that stay in memory long after the first look.
-    .hero__actions
-      +btn('See our works', '#works')
-      +btn('Get in touch', '#contact', 'secondary')
+section.c-hero(aria-labelledby='hero-title')
+  .c-hero__media
+    +picture(images.hero, '', {
+      lazy: false,
+      cls: 'c-hero__image',
+      sizes:
+        '(min-width: 1260px) 100vw, (min-width: 744px) max(100vw, 1244px), max(100vw, 712px)',
+    })
+  .c-hero__inner.o-container.o-grid
+    h1#hero-title.c-hero__title Bring joy back to the everyday
