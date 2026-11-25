@@ -105,6 +105,7 @@ Hero і банер це один растр на кадр: `object-fit: cover` +
 ### 1260 px
 
 <img width="1260" alt="PerfectPixel 1260" src="https://github.com/user-attachments/assets/930a233e-826d-4453-a2ea-34beff77fe0d" />
+
 ## W3C Validator
 
 ### https://validator.w3.org/nu/?doc=https%3A%2F%2Fmaykaxx.github.io%2Flanding-nothing%2F
