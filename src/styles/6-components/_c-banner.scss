@@ -1,6 +1,5 @@
-@use '../2-tools' as a;
-
-// Банер над секцією «Timeless»: повноширинний. 320/744: FILL HEIGHT, кадр зсунуто до пульта Halo.
+// Банер над секцією «Timeless»: повноширинний, object-fit: cover.
+// Фото 4:3, а кадр у макеті 1260×460: зсув по вертикалі (65%) взято з макета; на 320/744 фото майже не обрізається по ширині.
 .c-banner {
   height: var(--banner-height);
 
@@ -8,14 +7,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 82% 50%;
-
-    @include a.mq(md) {
-      object-position: 92% 50%;
-    }
-
-    @include a.mq(lg) {
-      object-position: 50% 50%;
-    }
+    object-position: 50% 65.4%;
   }
 }
