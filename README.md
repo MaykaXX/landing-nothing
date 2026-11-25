@@ -3,7 +3,7 @@
 Лабораторна робота №10, **варіант 2**, методологія **BEM + ITCSS**.
 
 - Макет: [Figma, сторінка `v2 B&O`](https://www.figma.com/design/SKwOm0iY8234gJZwOBezoS/BOSE-New-Version--Copy-?node-id=6817-211)
-- Демо: (https://maykaxx.github.io/landing-nothing/) 
+- Демо: (https://maykaxx.github.io/landing-nothing/)
 
 ## Команди
 
