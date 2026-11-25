@@ -3,18 +3,21 @@ $content-width: 1020;
 $colors: (
   'dark': #1b2129,
   'accent': #f98921,
-  'accent-pressed': #d9700f,
+  'accent-pressed': #010810,
+  // було #d9700f
   'surface': #f9f9f9,
   'surface-menu': #ece9e6,
   'surface-about': #fcfaef,
   'placeholder': #7e7e83,
   'label': #9393a3,
-  'border-hover': #d5d7de,
+  'border-hover': #dbdbdb,
+  // було #d5d7de
   'error': #d93025,
   'white': #fff,
 );
 $fonts: (
   'base': "'Manrope', sans-serif",
+  'phone': "'Inter', sans-serif",
 );
 
 // Значення в px для ширин макета: (320, 744, 1260). У :root стають CSS custom properties.
@@ -45,14 +48,14 @@ $tokens-px: (
     96,
   ),
   'logo-width': (
-    156,
-    224,
-    224,
+    152,
+    228,
+    228,
   ),
   'logo-height': (
-    13,
-    19,
-    19,
+    16,
+    24,
+    24,
   ),
   'icon-size': (
     24,
@@ -95,12 +98,12 @@ $tokens-px: (
     120,
   ),
   'space-about': (
-    64,
-    96,
+    48,
+    120,
     120,
   ),
   'space-contact': (
-    104,
+    64,
     120,
     120,
   ),

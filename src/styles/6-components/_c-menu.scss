@@ -34,9 +34,13 @@
   &__phone,
   &__call {
     font-size: a.rem(22);
-    font-weight: 600;
+    font-weight: 700;
     line-height: a.rem(22);
     letter-spacing: 2px;
+  }
+
+  &__link {
+    letter-spacing: 0;
   }
 
   &__link:hover,

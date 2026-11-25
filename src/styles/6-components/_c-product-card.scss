@@ -8,6 +8,7 @@
   &__media {
     aspect-ratio: 1;
     overflow: hidden;
+    border-radius: t.rem(4);
     background-color: var(--color-surface);
   }
 
@@ -20,12 +21,19 @@
   &__title {
     margin-top: t.rem(24);
     font-size: t.rem(18);
+    font-weight: 700;
     line-height: 1.4;
     text-transform: uppercase;
   }
 
   &__text {
     margin-top: t.rem(8);
+    font-weight: 400;
+    line-height: t.rem(22); // 320, під макет
+
+    @include t.mq(md) {
+      line-height: 1.4;
+    }
 
     @include t.mq(lg) {
       max-width: t.rem(288);
@@ -35,6 +43,7 @@
   &__price {
     margin-top: auto;
     padding-top: t.rem(12);
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0;
   }
 }

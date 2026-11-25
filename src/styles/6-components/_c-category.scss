@@ -11,7 +11,7 @@
 
     @include t.mq(md) {
       grid-column: span 3;
-      aspect-ratio: 498 / 324;
+      aspect-ratio: 288 / 184;
     }
 
     @include t.mq(lg) {
@@ -31,5 +31,9 @@
     margin-top: t.rem(16);
     font-size: var(--fs-category);
     line-height: 1.4;
+
+    @include t.mq(lg) {
+      margin-top: t.rem(22); // 1260: +4px на кожен рядок
+    }
   }
 }

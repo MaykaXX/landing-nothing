@@ -26,9 +26,10 @@
   }
 
   &__title {
-    @include t.grid-column('span 2', '1 / 5', '1 / 8');
+    @include t.grid-column('span 2', '1 / 5', '1 / 6');
 
     font-size: var(--fs-hero);
+    font-weight: 700;
     line-height: 1;
   }
 }

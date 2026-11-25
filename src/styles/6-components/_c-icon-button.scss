@@ -21,7 +21,8 @@
   &__number {
     display: none;
     font-size: a.rem(12);
-    font-weight: 600;
+    font-family: var(--font-phone);
+    font-weight: 700;
     line-height: a.rem(16);
     letter-spacing: 2px;
     text-transform: uppercase;

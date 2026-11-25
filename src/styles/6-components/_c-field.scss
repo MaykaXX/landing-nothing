@@ -6,7 +6,8 @@
   width: 100%;
   padding: a.rem(13) a.rem(16);
   border: 1px solid transparent;
-  border-radius: a.rem(4);
+  border-radius: a.rem(8);
+  letter-spacing: 0.15px;
   background-color: var(--color-surface);
   color: var(--color-dark);
   font-size: a.rem(14);
@@ -26,10 +27,6 @@
     outline: 0;
     border-color: var(--color-accent);
     box-shadow: 0 0 0 1px var(--color-accent);
-  }
-
-  &:not(:placeholder-shown) {
-    border-color: var(--color-border-hover);
   }
 
   &:user-invalid {

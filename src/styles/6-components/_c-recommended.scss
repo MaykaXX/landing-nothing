@@ -15,4 +15,16 @@
   &__item {
     @include a.grid-column('span 2', 'span 6', 'span 4');
   }
+
+  &__item:first-child {
+    @include a.mq(md) {
+      padding-bottom: a.rem(22);
+    }
+  }
+
+  @include a.mq(lg) {
+    &__item:first-child {
+      padding-bottom: 0;
+    }
+  }
 }
