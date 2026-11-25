@@ -90,4 +90,27 @@ Hero і банер це один растр на кадр: `object-fit: cover` +
 
 ## Скриншоти
 
-PerfectPixel (320 / 744 / 1260), W3C Validator, PageSpeed Insights (Mobile, Desktop)
+## PerfectPixel (320 / 744 / 1260)
+
+Звірка верстки з макетом Figma для трьох ширин (накладка PerfectPixel, прозорість 50%).
+
+### 320 px
+
+<img width="320" alt="PerfectPixel 320" src="https://github.com/user-attachments/assets/4b09e1ac-786e-4b6f-942f-74b2dc90a0fe" />
+
+### 744 px
+
+<img width="744" alt="PerfectPixel 744" src="https://github.com/user-attachments/assets/75aa9bc5-7a12-4ace-b9cc-b1a4b1cf1a49" />
+
+### 1260 px
+
+<img width="1260" alt="PerfectPixel 1260" src="https://github.com/user-attachments/assets/930a233e-826d-4453-a2ea-34beff77fe0d" />
+## W3C Validator
+
+### https://validator.w3.org/nu/?doc=https%3A%2F%2Fmaykaxx.github.io%2Flanding-nothing%2F
+<img width="2169" height="1314" alt="image" src="https://github.com/user-attachments/assets/b95f730a-3d64-4264-b1b5-7e4b284496c1" />
+
+## PageSpeed Insights (Mobile, Desktop)
+### https://pagespeed.web.dev/analysis/https-maykaxx-github-io-landing-nothing/ptco36eohnn8f0ut526qr1?form_factor=desktop
+<img width="1621" height="1048" alt="Снимок экрана от 2026-11-25 11-08-47" src="https://github.com/user-attachments/assets/d8e23abc-15bc-401c-8788-4006d0b66dda" />
+<img width="1621" height="1048" alt="Снимок экрана от 2026-11-25 11-08-19" src="https://github.com/user-attachments/assets/7a013a55-b787-498f-bcdd-a71059f921a4" />
