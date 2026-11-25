@@ -3,7 +3,7 @@ mixin product-card(product)
     .c-product-card__media
       +picture(productImage(product.image), product.alt, {
         cls: 'c-product-card__image',
-        sizes: '(min-width: 1260px) 324px, (min-width: 744px) 392px, calc(100vw - 40px)',
+        sizes: '(min-width: 1260px) 324px, (min-width: 744px) 600px, calc(100vw - 40px)',
       })
     h3.c-product-card__title= product.name
     p.c-product-card__text= product.text

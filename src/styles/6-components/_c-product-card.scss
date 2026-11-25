@@ -25,8 +25,11 @@
   }
 
   &__text {
-    max-width: t.rem(288);
     margin-top: t.rem(8);
+
+    @include t.mq(lg) {
+      max-width: t.rem(288);
+    }
   }
 
   &__price {

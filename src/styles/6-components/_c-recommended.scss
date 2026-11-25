@@ -13,6 +13,6 @@
 
   // 320: 2 колонки; 744: 4 колонки по центру (зміщення на 1); 1260: по 4 з 12.
   &__item {
-    @include a.grid-column('span 2', '2 / 6', 'span 4');
+    @include a.grid-column('span 2', 'span 6', 'span 4');
   }
 }
